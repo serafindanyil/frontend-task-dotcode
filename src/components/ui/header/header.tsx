@@ -12,7 +12,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className="flex items-center justify-between p-4 bg-blur-xl bg-background-tertiary border border-border text-white rounded">
+		<header className="flex items-center justify-between p-4 bg-blur-xl bg-background-tertiary border border-border text-white rounded mb-6">
 			<div className="flex items-center">
 				<Bitcoin className="text-primary mr-2" size={24} />
 				<span className="text-xl font-bold">Crypto SPA</span>
@@ -21,8 +21,8 @@ const Header = () => {
 				<ul className="flex space-x-4">
 					<li>
 						<ButtonLink
-							href={"/interactive-workspace"}
-							variant={isActivePage("/interactive-workspace")}
+							href={"/workspace"}
+							variant={isActivePage("/workspace")}
 							className="text-white">
 							<Grid className="" size={16} />
 							<span>Interactive Workspace</span>
@@ -30,8 +30,8 @@ const Header = () => {
 					</li>
 					<li>
 						<ButtonLink
-							href={"/bitcoin-tracker"}
-							variant={isActivePage("/bitcoin-tracker")}
+							href={"/tracker"}
+							variant={isActivePage("/tracker")}
 							className="text-white">
 							<Bitcoin size={16} />
 							<span>Bitcoin Tracker</span>
