@@ -15,7 +15,7 @@ const Header = () => {
 
 	return (
 		<header className="text-white mb-6">
-			<CardBase>
+			<CardBase className="justify-between">
 				<div className="flex items-center">
 					<PanelsLeftBottom className="text-primary mr-2" size={24} />
 					<span className="text-xl font-bold">Crypto SPA</span>
