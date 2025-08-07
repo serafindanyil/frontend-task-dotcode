@@ -4,7 +4,7 @@ import CardLiveTransactionFallback from "@/app/card/live-transaction/card-live-t
 const CardLiveTransaction = ({ content }: { content?: null }) => {
 	return (
 		<CardBase
-			innerPadding={false}
+			variant="no-inner-padding"
 			className="flex-col justify-start w-full h-full">
 			<div className="w-full py-4 px-5 border-b border-border">
 				<h3 className="font-semibold text-base">Live Transaction Feed</h3>

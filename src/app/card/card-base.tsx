@@ -1,19 +1,19 @@
+import "./card-base.scss";
+
 type CardBaseProps = {
 	children: React.ReactNode;
+	variant?: "default" | "no-inner-padding";
 	innerPadding?: boolean;
 	className?: string;
 };
 
 const CardBase = ({
 	children,
-	innerPadding = true,
+	variant = "default",
 	className,
 }: CardBaseProps) => {
 	return (
-		<div
-			className={`flex items-center ${
-				innerPadding ? "py-4 px-5" : ""
-			} bg-blur-xl bg-background-tertiary border border-border rounded ${className}`}>
+		<div className={`card-base card-base--${variant} ${className}`}>
 			{children}
 		</div>
 	);
