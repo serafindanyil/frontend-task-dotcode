@@ -1,0 +1,14 @@
+.button {
+	@apply flex justify-between items-center gap-2 px-4 py-2 rounded font-medium text-sm transition-all ease-in-out duration-300;
+	&--solid {
+		@apply bg-primary-muted text-white hover:bg-primary-hover;
+	}
+
+	&--outline {
+		@apply text-white border border-border hover:bg-primary-muted/15;
+	}
+
+	&--disabled {
+		@apply bg-gray-300 text-gray-500 border border-gray-300 cursor-not-allowed;
+	}
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* Backgrounds */
+	--background: 0 0% 4%;
+	--background-secondary: 0 0% 6%;
+	--background-tertiary: 0 0% 8%;
+	--foreground: 0 0% 93%;
+
+	/* Glassmorphism Panels */
+	--glass-primary: 0 0% 10%;
+	--glass-secondary: 0 0% 12%;
+	--glass-border: 0 0% 20%;
+
+	/* Cards */
+	--card: 0 0% 8%;
+	--card-foreground: 0 0% 93%;
+	--card-border: 0 0% 15%;
+
+	/* Interactive */
+	--primary: 200 100% 60%;
+	--primary-muted: 200 80% 45%;
+	--primary-hover: 200 70% 50%;
+	--primary-foreground: 0 0% 100%;
+
+	--secondary: 0 0% 12%;
+	--secondary-foreground: 0 0% 85%;
+
+	/* Muted */
+	--muted: 0 0% 10%;
+	--muted-foreground: 0 0% 60%;
+
+	/* Accent */
+	--accent: 190 100% 55%;
+	--accent-muted: 190 60% 40%;
+	--accent-foreground: 0 0% 100%;
+
+	/* States */
+	--destructive: 0 85% 55%;
+	--destructive-foreground: 0 0% 100%;
+	--success: 120 60% 50%;
+	--warning: 45 90% 55%;
+
+	/* Borders and Inputs */
+	--border: 0 0% 15%;
+	--border-muted: 0 0% 12%;
+	--input: 0 0% 12%;
+	--ring: 200 100% 60%;
+
+	/* Workspace */
+	--workspace-grid: 0 0% 8%;
+	--workspace-block: 0 0% 12%;
+	--workspace-block-active: 0 0% 16%;
+
+	/* BTC Tracker */
+	--btc-positive: 120 60% 50%;
+	--btc-negative: 0 85% 55%;
+	--btc-neutral: 0 0% 60%;
+
+	/* Utilities */
+	--radius: 0.75rem;
+	--radius-lg: 1rem;
+	--spacing-unit: 0.25rem;
+
+	/* Optionally transparent presets */
+	--transparent-white: 0 0% 100%;
+	--transparent-black: 0 0% 0%;
+}
+
+@theme inline {
+	--color-background: hsl(var(--background));
+	--font-sans: hsl(var(--font-inter));
+}
+
+body {
+	background: hsl(var(--background));
+	color: hsl(var(--foreground));
+	font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
