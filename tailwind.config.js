@@ -14,40 +14,57 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				background: "var(--background)",
-				"background-secondary": "var(--background-secondary)",
-				"background-tertiary": "var(--background-tertiary)",
-				foreground: "var(--foreground)",
-				"glass-primary": "var(--glass-primary)",
-				"glass-secondary": "var(--glass-secondary)",
-				"glass-border": "var(--glass-border)",
-				card: "var(--card)",
-				"card-foreground": "var(--card-foreground)",
-				"card-border": "var(--card-border)",
-				primary: "var(--primary)",
-				"primary-muted": "var(--primary-muted)",
-				"primary-foreground": "var(--primary-foreground)",
-				secondary: "var(--secondary)",
-				"secondary-foreground": "var(--secondary-foreground)",
-				muted: "var(--muted)",
-				"muted-foreground": "var(--muted-foreground)",
-				accent: "var(--accent)",
-				"accent-muted": "var(--accent-muted)",
-				"accent-foreground": "var(--accent-foreground)",
-				destructive: "var(--destructive)",
-				"destructive-foreground": "var(--destructive-foreground)",
-				success: "var(--success)",
-				warning: "var(--warning)",
-				border: "var(--border)",
-				"border-muted": "var(--border-muted)",
-				input: "var(--input)",
-				ring: "var(--ring)",
-				"workspace-grid": "var(--workspace-grid)",
-				"workspace-block": "var(--workspace-block)",
-				"workspace-block-active": "var(--workspace-block-active)",
-				"btc-positive": "var(--btc-positive)",
-				"btc-negative": "var(--btc-negative)",
-				"btc-neutral": "var(--btc-neutral)",
+				background: "hsl(var(--background) / <alpha-value>)",
+				"background-secondary":
+					"hsl(var(--background-secondary) / <alpha-value>)",
+				"background-tertiary":
+					"hsl(var(--background-tertiary) / <alpha-value>)",
+				foreground: "hsl(var(--foreground) / <alpha-value>)",
+
+				"glass-primary": "hsl(var(--glass-primary) / <alpha-value>)",
+				"glass-secondary": "hsl(var(--glass-secondary) / <alpha-value>)",
+				"glass-border": "hsl(var(--glass-border) / <alpha-value>)",
+
+				card: "hsl(var(--card) / <alpha-value>)",
+				"card-foreground": "hsl(var(--card-foreground) / <alpha-value>)",
+				"card-border": "hsl(var(--card-border) / <alpha-value>)",
+
+				primary: "hsl(var(--primary) / <alpha-value>)",
+				"primary-muted": "hsl(var(--primary-muted) / <alpha-value>)",
+				"primary-hover": "hsl(var(--primary-hover) / <alpha-value>)",
+				"primary-foreground": "hsl(var(--primary-foreground) / <alpha-value>)",
+
+				secondary: "hsl(var(--secondary) / <alpha-value>)",
+				"secondary-foreground":
+					"hsl(var(--secondary-foreground) / <alpha-value>)",
+
+				muted: "hsl(var(--muted) / <alpha-value>)",
+				"muted-foreground": "hsl(var(--muted-foreground) / <alpha-value>)",
+
+				accent: "hsl(var(--accent) / <alpha-value>)",
+				"accent-muted": "hsl(var(--accent-muted) / <alpha-value>)",
+				"accent-foreground": "hsl(var(--accent-foreground) / <alpha-value>)",
+
+				destructive: "hsl(var(--destructive) / <alpha-value>)",
+				"destructive-foreground":
+					"hsl(var(--destructive-foreground) / <alpha-value>)",
+
+				success: "hsl(var(--success) / <alpha-value>)",
+				warning: "hsl(var(--warning) / <alpha-value>)",
+
+				border: "hsl(var(--border) / <alpha-value>)",
+				"border-muted": "hsl(var(--border-muted) / <alpha-value>)",
+				input: "hsl(var(--input) / <alpha-value>)",
+				ring: "hsl(var(--ring) / <alpha-value>)",
+
+				"workspace-grid": "hsl(var(--workspace-grid) / <alpha-value>)",
+				"workspace-block": "hsl(var(--workspace-block) / <alpha-value>)",
+				"workspace-block-active":
+					"hsl(var(--workspace-block-active) / <alpha-value>)",
+
+				"btc-positive": "hsl(var(--btc-positive) / <alpha-value>)",
+				"btc-negative": "hsl(var(--btc-negative) / <alpha-value>)",
+				"btc-neutral": "hsl(var(--btc-neutral) / <alpha-value>)",
 			},
 
 			borderRadius: {

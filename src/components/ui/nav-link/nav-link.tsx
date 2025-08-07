@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+
 const NavLink = ({
 	href,
 	children,
@@ -8,9 +11,9 @@ const NavLink = ({
 	className?: string;
 }) => {
 	return (
-		<a href={href} className={`text-blue-500 hover:underline ${className}`}>
+		<Link href={href} className={`text-blue-500 hover:underline ${className}`}>
 			{children}
-		</a>
+		</Link>
 	);
 };
 
