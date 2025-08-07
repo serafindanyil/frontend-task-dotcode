@@ -6,10 +6,10 @@ import CardLiveTransaction from "@/app/card/live-transaction/card-live-transacti
 
 const TrackerPage = () => {
 	return (
-		<main className="w-full space-y-6">
+		<main className="w-full h-full space-y-6 pb-4">
 			<CardTracker />
 			<CardControlPanel />
-			<div className="flex flex-col xl:flex-row gap-6 ">
+			<div className="flex flex-col md:flex-row gap-6 ">
 				<CardTotalVolume />
 				<CardTransactionCount />
 			</div>

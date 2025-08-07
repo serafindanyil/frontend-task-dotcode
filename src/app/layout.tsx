@@ -23,16 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.variable} container p-4  antialiased font-sans`}>
-				<Script
-					type="module"
-					src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-					strategy="beforeInteractive"
-				/>
-				<Script
-					src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-					strategy="beforeInteractive"
-				/>
+				className={`${inter.variable} flex flex-col min-h-screen p-4 antialiased font-sans`}>
 				<Header />
 				{children}
 			</body>

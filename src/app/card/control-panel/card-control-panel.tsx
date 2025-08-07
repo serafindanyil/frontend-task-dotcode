@@ -11,7 +11,7 @@ const CardControlPanel = () => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
-		<CardBase className="flex items-center gap-4">
+		<CardBase className="flex items-center justify-between md:justify-normal gap-4">
 			<ButtonToggle
 				isActive={isActive}
 				onClick={() => setIsActive(!isActive)}

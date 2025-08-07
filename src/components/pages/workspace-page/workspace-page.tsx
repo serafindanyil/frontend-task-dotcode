@@ -1,7 +1,11 @@
+import CardWorkspaceReset from "@/app/card/workspace-reset/card-workspace-reset";
+import CardWorkspaceInfo from "@/app/card/workspace-info/card-workspace-info";
+
 const WorkspacePage = () => {
 	return (
-		<main className="">
-			<h1 className="text-2xl font-bold">Welcome to worr</h1>
+		<main className="w-full space-y-6 pb-4">
+			<CardWorkspaceReset />
+			<CardWorkspaceInfo />
 		</main>
 	);
 };
