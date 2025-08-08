@@ -3,11 +3,13 @@ import { persistReducer, persistStore } from "redux-persist";
 import localforage from "localforage";
 
 import bitcoinReducer from "./features/bitcoin/bitcoin-slice";
+import workspaceReducer from "./features/workspace/workspace-slice";
 
 localforage.config({
 	name: "btcTrackerDB",
 	storeName: "bitcoinStore",
-	description: "Persistent storage for Bitcoin live transactions",
+	description:
+		"Persistent storage for Bitcoin live transactions and workspace state",
 });
 
 const bitcoinPersistConfig = {
@@ -16,14 +18,26 @@ const bitcoinPersistConfig = {
 	whitelist: ["transactions", "totalBTCTransferred"],
 };
 
+const workspacePersistConfig = {
+	key: "workspace",
+	storage: localforage,
+	whitelist: ["blocks", "highestZIndex"],
+};
+
 const persistedBitcoinReducer = persistReducer(
 	bitcoinPersistConfig,
 	bitcoinReducer
 );
 
+const persistedWorkspaceReducer = persistReducer(
+	workspacePersistConfig,
+	workspaceReducer
+);
+
 export const store = configureStore({
 	reducer: {
 		bitcoin: persistedBitcoinReducer,
+		workspace: persistedWorkspaceReducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({
