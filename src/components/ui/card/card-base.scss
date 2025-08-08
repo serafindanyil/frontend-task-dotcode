@@ -4,4 +4,8 @@
 	&--no-inner-padding {
 		@apply py-0 px-0;
 	}
+
+	&--accent {
+		@apply border-accent;
+	}
 }

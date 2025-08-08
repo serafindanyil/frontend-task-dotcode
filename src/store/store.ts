@@ -1,18 +1,29 @@
 import { configureStore } from "@reduxjs/toolkit";
-import bitcoinReducer from "./features/bitcoin/bitcoin-slice";
 import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import localforage from "localforage";
+
+import bitcoinReducer from "./features/bitcoin/bitcoin-slice";
+
+localforage.config({
+	name: "btcTrackerDB",
+	storeName: "bitcoinStore",
+	description: "Persistent storage for Bitcoin live transactions",
+});
 
 const bitcoinPersistConfig = {
-	key: "root",
-	storage,
+	key: "bitcoin",
+	storage: localforage,
+	whitelist: ["transactions", "totalBTCTransferred"],
 };
 
-const persistedReducer = persistReducer(bitcoinPersistConfig, bitcoinReducer);
+const persistedBitcoinReducer = persistReducer(
+	bitcoinPersistConfig,
+	bitcoinReducer
+);
 
 export const store = configureStore({
 	reducer: {
-		bitcoin: persistedReducer,
+		bitcoin: persistedBitcoinReducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({

@@ -10,16 +10,20 @@ import {
 
 import type { AppDispatch } from "@/store/store";
 
+import { throttle } from "@/utils/throttle";
+
 import CardBase from "../card-base";
 
 import ButtonToggle from "@/components/ui/button/toggle/button-toggle";
 import ButtonReset from "@/components/ui/button/reset/button-reset";
 
+const THROTTLE_LATENCY: number = 200;
+
 const CardControlPanel = () => {
 	const [isActive, setIsActive] = useState(false);
 	const dispatch = useDispatch<AppDispatch>();
 
-	const handleButtonToggle = () => {
+	const handleButtonToggle = throttle(() => {
 		if (isActive) {
 			dispatch(disconnectBitcoinStream());
 			setIsActive((prev) => !prev);
@@ -27,11 +31,11 @@ const CardControlPanel = () => {
 			dispatch(connectBitcoinStream());
 			setIsActive((prev) => !prev);
 		}
-	};
+	}, THROTTLE_LATENCY);
 
-	const handleButtonReset = () => {
+	const handleButtonReset = throttle(() => {
 		dispatch(restartBitcoinStream());
-	};
+	}, THROTTLE_LATENCY);
 
 	return (
 		<CardBase className="flex items-center justify-between md:justify-normal gap-4">

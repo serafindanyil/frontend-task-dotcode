@@ -48,7 +48,7 @@ export const disconnectBitcoinStream = () => (dispatch: AppDispatch) => {
 		socket.close();
 		socket = null;
 		dispatch(stopListening());
-		// діспатч якщо що прибрати
+		// FIXME: якщо код не буде працювати прибери діспатч
 	}
 };
 

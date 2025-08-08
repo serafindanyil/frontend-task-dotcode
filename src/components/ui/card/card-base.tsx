@@ -2,7 +2,7 @@ import "./card-base.scss";
 
 type CardBaseProps = {
 	children: React.ReactNode;
-	variant?: "default" | "grid" | "no-inner-padding";
+	variant?: "default" | "accent" | "grid" | "no-inner-padding";
 	innerPadding?: boolean;
 	className?: string;
 };

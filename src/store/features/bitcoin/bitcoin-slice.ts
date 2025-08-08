@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 
 export interface BitcoinTransaction {
 	timestamp: number;
@@ -40,12 +38,7 @@ const bitcoinSlice = createSlice({
 	},
 });
 
-const persistConfig = {
-	key: "bitcoin",
-	storage,
-};
-
 export const { addTransaction, startListening, stopListening, restartData } =
 	bitcoinSlice.actions;
 
-export default persistReducer(persistConfig, bitcoinSlice.reducer);
+export default bitcoinSlice.reducer;

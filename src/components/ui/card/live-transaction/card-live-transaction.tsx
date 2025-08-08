@@ -22,11 +22,11 @@ const CardLiveTransaction = () => {
 
 			<div className="flex flex-col items-center justify-start w-full h-[50vh] p-3 gap-2 overflow-y-auto ">
 				{/* {!!!transactions.length && <CardLiveTransactionFallback />} */}
-				{transactions.map((item) => (
+				{transactions.map((item, index) => (
 					<CardLiveTransactionItem
 						key={item.hash}
 						item={item}
-						isLatest={true}
+						isLatest={index === 0}
 					/>
 				))}
 			</div>

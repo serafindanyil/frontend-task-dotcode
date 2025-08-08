@@ -18,9 +18,11 @@ const CardLiveTransactionItem = ({
 	isLatest: boolean;
 }) => {
 	return (
-		<CardBase className="flex justify-between w-full">
-			<div className="space-y-4 w-full">
-				<div className="flex flex-col gap-4 sm:gap-0 sm:flex-row items-start sm:items-center justify-between w-full">
+		<CardBase
+			className="flex justify-between w-full"
+			variant={isLatest ? "accent" : "default"}>
+			<div className="space-y-3 w-full">
+				<div className="flex flex-col gap-3 sm:gap-0 sm:flex-row items-start sm:items-center justify-between w-full">
 					<div className="flex gap-2 items-center text-muted-foreground">
 						<Calendar size={14} />
 						<span className="font-medium text-xs mr-2">
