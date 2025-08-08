@@ -1,0 +1,21 @@
+.status-connection {
+	@apply flex items-center justify-center h-full;
+
+	&__icon {
+		@apply text-muted-foreground mr-2;
+	}
+
+	&__status {
+		@apply text-sm;
+	}
+}
+
+.is-connected {
+	&--true {
+		@apply text-success;
+	}
+
+	&--false {
+		@apply text-muted-foreground;
+	}
+}

@@ -1,4 +1,5 @@
 import { Wifi, WifiOff } from "lucide-react";
+import "./status-connection.scss";
 
 type StatusConnectionProps = {
 	isConnected: boolean;
@@ -11,9 +12,13 @@ const StatusConnection = ({
 }: StatusConnectionProps) => {
 	const Tag = isConnected ? Wifi : WifiOff;
 	return (
-		<div className={`flex items-center justify-center h-full ${className}`}>
-			<Tag className="text-muted-foreground mr-2" size={16} />
-			<span className="text-sm text-muted-foreground">
+		<div className={`status-connection ${className}`}>
+			<Tag
+				className={`status-connection__icon is-connected--${isConnected}`}
+				size={16}
+			/>
+			<span
+				className={`status-connection__status is-connected--${isConnected}`}>
 				{isConnected ? "Connected" : "Disconnected"}
 			</span>
 		</div>
