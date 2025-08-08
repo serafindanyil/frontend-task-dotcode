@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
 
 import { Activity } from "lucide-react";
 
 import CardBase from "../card-base";
 
 const CardTransactionCount = () => {
-	const [count, setCount] = useState(0);
+	const { transactions } = useSelector((state: RootState) => state.bitcoin);
 
 	return (
 		<CardBase className="w-full">
@@ -17,7 +18,7 @@ const CardTransactionCount = () => {
 					<h2 className="text-base font-semibold">Transactions Count</h2>
 				</div>
 				<div className="flex items-center mb-3">
-					<h3 className="text-3xl font-bold">{count}</h3>
+					<h3 className="text-3xl font-bold">{transactions.length}</h3>
 				</div>
 
 				<p className="text-sm text-muted-foreground mb-1">

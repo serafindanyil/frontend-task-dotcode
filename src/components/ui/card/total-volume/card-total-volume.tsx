@@ -1,13 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
+
+import satoshiToBTC from "@/utils/satoshiToBTC";
 
 import { Bitcoin, TrendingUp } from "lucide-react";
 
 import CardBase from "../card-base";
 
 const CardTotalVolume = () => {
-	const [volume, setVolume] = useState(1);
+	const { totalBTCTransferred } = useSelector(
+		(state: RootState) => state.bitcoin
+	);
 
 	return (
 		<CardBase className="w-full">
@@ -18,7 +23,9 @@ const CardTotalVolume = () => {
 				</div>
 				<div className="flex items-center mb-3 -ml-2">
 					<Bitcoin style={{ transform: "rotate(-10deg)" }} size={36} />
-					<h3 className="text-3xl font-bold">{volume.toFixed(9)}</h3>
+					<h3 className="text-3xl font-bold">
+						{satoshiToBTC(totalBTCTransferred)}
+					</h3>
 				</div>
 
 				<p className="text-sm text-muted-foreground mb-1">

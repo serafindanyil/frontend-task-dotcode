@@ -1,8 +1,8 @@
-import CardTracker from "@/app/card/tracker/card-tracker";
-import CardControlPanel from "@/app/card/control-panel/card-control-panel";
-import CardTotalVolume from "@/app/card/total-volume/card-total-volume";
-import CardTransactionCount from "@/app/card/transaction-count/card-transaction-count";
-import CardLiveTransaction from "@/app/card/live-transaction/card-live-transaction";
+import CardTracker from "@/components/ui/card/tracker/card-tracker";
+import CardControlPanel from "@/components/ui/card/control-panel/card-control-panel";
+import CardTotalVolume from "@/components/ui/card/total-volume/card-total-volume";
+import CardTransactionCount from "@/components/ui/card/transaction-count/card-transaction-count";
+import CardLiveTransaction from "@/components/ui/card/live-transaction/card-live-transaction";
 
 const TrackerPage = () => {
 	return (

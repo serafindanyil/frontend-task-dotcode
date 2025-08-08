@@ -1,5 +1,5 @@
-import CardWorkspaceReset from "@/app/card/workspace-reset/card-workspace-reset";
-import CardWorkspaceInfo from "@/app/card/workspace-info/card-workspace-info";
+import CardWorkspaceReset from "@/components/ui/card/workspace-reset/card-workspace-reset";
+import CardWorkspaceInfo from "@/components/ui/card/workspace-info/card-workspace-info";
 
 const WorkspacePage = () => {
 	return (

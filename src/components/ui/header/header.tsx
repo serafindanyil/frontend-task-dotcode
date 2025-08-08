@@ -2,8 +2,8 @@
 
 import { PanelsLeftBottom } from "lucide-react";
 
-import CardBase from "@/app/card/card-base";
-import HeaderNav from "@/components/ui/header/header-nav";
+import HeaderNav from "./header-nav";
+import CardBase from "../card/card-base";
 
 const Header = () => {
 	return (

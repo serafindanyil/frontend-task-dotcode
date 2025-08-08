@@ -1,8 +1,16 @@
-import CardBase from "../card-base";
+"use client";
+
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
+
 import { Bitcoin } from "lucide-react";
-import StatusConnection from "@/app/status/status-connection/status-connection";
+
+import CardBase from "../card-base";
+import StatusConnection from "../status/status-connection";
 
 const CardTracker = () => {
+	const { isListening } = useSelector((state: RootState) => state.bitcoin);
+
 	return (
 		<CardBase className="flex flex-col md:flex-row items-center justify-between gap-2">
 			<div className="flex items-center gap-4 w-full text-left order-1 md:order-none">
@@ -18,7 +26,7 @@ const CardTracker = () => {
 						</p>
 					</div>
 					<StatusConnection
-						isConnected={false}
+						isConnected={isListening}
 						className="self-start order-0 md:order-none md:self-center"
 					/>
 				</div>

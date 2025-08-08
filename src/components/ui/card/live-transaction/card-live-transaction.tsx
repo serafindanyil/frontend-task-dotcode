@@ -1,5 +1,5 @@
-import CardBase from "@/app/card/card-base";
-import CardLiveTransactionFallback from "@/app/card/live-transaction/card-live-transaction-fallback";
+import CardBase from "@/components/ui/card/card-base";
+import CardLiveTransactionFallback from "@/components/ui/card/live-transaction/card-live-transaction-fallback";
 
 const CardLiveTransaction = ({ content }: { content?: null }) => {
 	return (
