@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	connectBitcoinStream,
 	disconnectBitcoinStream,
@@ -9,6 +9,7 @@ import {
 } from "@/store/features/bitcoin/bitcoin-ws-service";
 
 import type { AppDispatch } from "@/store/store";
+import type { RootState } from "@/store/store";
 
 import { throttle } from "@/utils/throttle";
 
@@ -20,8 +21,10 @@ import ButtonReset from "@/components/ui/button/reset/button-reset";
 const THROTTLE_LATENCY: number = 200;
 
 const CardControlPanel = () => {
-	const [isActive, setIsActive] = useState(false);
 	const dispatch = useDispatch<AppDispatch>();
+	const { isListening } = useSelector((state: RootState) => state.bitcoin);
+
+	const [isActive, setIsActive] = useState(isListening ?? false);
 
 	const handleButtonToggle = throttle(() => {
 		if (isActive) {
