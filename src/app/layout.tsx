@@ -26,7 +26,7 @@ export default function RootLayout({
 		<html lang="en">
 			<ProviderWrapper>
 				<body
-					className={`${inter.variable} flex flex-col min-h-screen p-4 antialiased font-sans`}>
+					className={`${inter.variable} flex flex-col min-h-screen p-4 antialiased font-sans releative`}>
 					<Header />
 					{children}
 				</body>
