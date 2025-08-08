@@ -1,0 +1,27 @@
+.header-nav {
+	@apply flex hidden md:block;
+
+	&__list {
+		@apply flex space-x-4;
+	}
+
+	&__item {
+		@apply flex;
+	}
+
+	&__link {
+		@apply text-white;
+	}
+
+	&__name {
+		@apply font-medium text-sm truncate max-w-[4rem] md:max-w-none;
+
+		&--hidden {
+			@apply hidden md:block;
+		}
+
+		&--visible {
+			@apply block;
+		}
+	}
+}

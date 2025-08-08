@@ -1,8 +1,24 @@
-import CardBase from "../card-base";
+"use client";
+
+import { useDispatch } from "react-redux";
+import { resetWorkspace } from "@/store/features/workspace/workspace-slice";
+
 import { Grid } from "lucide-react";
+
+import { throttle } from "@/utils/throttle";
+
+import CardBase from "../card-base";
 import ButtonReset from "@/components/ui/button/reset/button-reset";
 
+const THROTTLE_LATENCY = 100;
+
 const CardWorkspaceReset = () => {
+	const dispatch = useDispatch();
+
+	const handleResetWorkspace = throttle(() => {
+		dispatch(resetWorkspace());
+	}, THROTTLE_LATENCY);
+
 	return (
 		<CardBase className="flex flex-col md:flex-row items-center justify-between gap-2">
 			<div className="flex items-center gap-4 w-full text-left">
@@ -14,7 +30,10 @@ const CardWorkspaceReset = () => {
 							Drag, resize, and manage blocks with persistant state
 						</p>
 					</div>
-					<ButtonReset className="self-end md:self-center h-fit" />
+					<ButtonReset
+						className="self-end md:self-center h-fit"
+						onClick={handleResetWorkspace}
+					/>
 				</div>
 			</div>
 		</CardBase>
