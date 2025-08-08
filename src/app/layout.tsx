@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
-import "@/styles/globals.css";
+
 import Header from "@/components/ui/header/header";
+import ProviderWrapper from "@/store/provider/provider-wrapper";
+
+import "@/styles/globals.css";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -22,20 +24,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${inter.variable} container p-4  antialiased font-sans`}>
-				<Script
-					type="module"
-					src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-					strategy="beforeInteractive"
-				/>
-				<Script
-					src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-					strategy="beforeInteractive"
-				/>
-				<Header />
-				{children}
-			</body>
+			<ProviderWrapper>
+				<body
+					className={`${inter.variable} flex flex-col min-h-screen p-4 antialiased font-sans`}>
+					<Header />
+					{children}
+				</body>
+			</ProviderWrapper>
 		</html>
 	);
 }

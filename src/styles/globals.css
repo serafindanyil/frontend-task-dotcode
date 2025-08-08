@@ -3,6 +3,42 @@
 @tailwind utilities;
 
 :root {
+	/* -background: rgba(10, 10, 10, 1);
+	--background-secondary: rgba(15, 15, 15, 1);
+	--background-tertiary: rgba(20, 20, 20, 1);
+	--foreground: rgba(238, 238, 238, 1);
+	--glass-primary: rgba(26, 26, 26, 1);
+	--glass-secondary: rgba(31, 31, 31, 1);
+	--glass-border: rgba(51, 51, 51, 1);
+	--card: rgba(20, 20, 20, 1);
+	--card-foreground: rgba(238, 238, 238, 1);
+	--card-border: rgb(8, 6, 6);
+	--primary: rgba(102, 204, 255, 1);
+	--primary-muted: rgba(82, 163, 230, 1);
+	--primary-hover: rgba(28, 121, 196, 1);
+	--primary-foreground: rgba(255, 255, 255, 1);
+	--secondary: rgba(31, 31, 31, 1);
+	--secondary-foreground: rgba(216, 216, 216, 1);
+	--muted: rgba(26, 26, 26, 1);
+	--muted-foreground: rgba(153, 153, 153, 1);
+	--accent: rgba(0, 204, 204, 1);
+	--accent-muted: rgba(102, 153, 153, 1);
+	--accent-foreground: rgba(255, 255, 255, 1);
+	--destructive: rgba(217, 26, 26, 1);
+	--destructive-foreground: rgba(255, 255, 255, 1);
+	--success: rgba(77, 191, 77, 1);
+	--warning: rgba(230, 204, 26, 1);
+	--border: rgba(38, 38, 38, 1);
+	--border-muted: rgba(31, 31, 31, 1);
+	--input: rgba(31, 31, 31, 1);
+	--ring: rgba(102, 204, 255, 1);
+	--workspace-grid: rgba(20, 20, 20, 1);
+	--workspace-block: rgba(31, 31, 31, 1);
+	--workspace-block-active: rgba(41, 41, 41, 1);
+	--btc-positive: rgba(77, 191, 77, 1);
+	--btc-negative: rgba(217, 26, 26, 1);
+	--btc-neutral: rgba(153, 153, 153, 1);
+	 */
 	/* Backgrounds */
 	--background: 0 0% 4%;
 	--background-secondary: 0 0% 6%;
@@ -75,6 +111,7 @@
 }
 
 body {
+	box-sizing: border-box;
 	background: hsl(var(--background));
 	color: hsl(var(--foreground));
 	font-family: var(--font-inter), system-ui, -apple-system, sans-serif;

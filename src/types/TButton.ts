@@ -1,3 +1,3 @@
 export type TButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-	variant?: "solid" | "outline" | "disabled";
+	variant?: "solid" | "outline" | "disabled" | "error";
 };

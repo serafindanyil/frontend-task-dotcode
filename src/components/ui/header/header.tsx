@@ -1,44 +1,20 @@
 "use client";
 
-import { Bitcoin, Grid } from "lucide-react";
-import ButtonLink from "@/components/ui/button/button-link";
-import { usePathname } from "next/navigation";
+import { PanelsLeftBottom } from "lucide-react";
+
+import HeaderNav from "./header-nav";
+import CardBase from "../card/card-base";
 
 const Header = () => {
-	const pathname = usePathname();
-
-	const isActivePage = (page: string) => {
-		return pathname === page ? "solid" : "outline";
-	};
-
 	return (
-		<header className="flex items-center justify-between p-4 bg-blur-xl bg-background-tertiary border border-border text-white rounded mb-6">
-			<div className="flex items-center">
-				<Bitcoin className="text-primary mr-2" size={24} />
-				<span className="text-xl font-bold">Crypto SPA</span>
-			</div>
-			<nav>
-				<ul className="flex space-x-4">
-					<li>
-						<ButtonLink
-							href={"/workspace"}
-							variant={isActivePage("/workspace")}
-							className="text-white">
-							<Grid className="" size={16} />
-							<span>Interactive Workspace</span>
-						</ButtonLink>
-					</li>
-					<li>
-						<ButtonLink
-							href={"/tracker"}
-							variant={isActivePage("/tracker")}
-							className="text-white">
-							<Bitcoin size={16} />
-							<span>Bitcoin Tracker</span>
-						</ButtonLink>
-					</li>
-				</ul>
-			</nav>
+		<header className="text-white mb-6">
+			<CardBase className="justify-between">
+				<div className="flex items-center">
+					<PanelsLeftBottom className="text-primary mr-2" size={24} />
+					<span className="text-xl font-bold">Crypto SPA</span>
+				</div>
+				<HeaderNav />
+			</CardBase>
 		</header>
 	);
 };
