@@ -1,7 +1,14 @@
+"use client";
+
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
+
 import CardBase from "@/components/ui/card/card-base";
 import CardLiveTransactionFallback from "@/components/ui/card/live-transaction/card-live-transaction-fallback";
+import CardLiveTransactionItem from "@/components/ui/card/live-transaction/card-live-transaction-item";
 
-const CardLiveTransaction = ({ content }: { content?: null }) => {
+const CardLiveTransaction = () => {
+	const { transactions } = useSelector((state: RootState) => state.bitcoin);
 	return (
 		<CardBase
 			variant="no-inner-padding"
@@ -12,8 +19,16 @@ const CardLiveTransaction = ({ content }: { content?: null }) => {
 					Real-time Bitcoin transaction from the network
 				</p>
 			</div>
-			<div className="flex items-center justify-center w-full h-[50vh]">
-				{content ?? <CardLiveTransactionFallback />}
+
+			<div className="flex flex-col items-center justify-start w-full h-[50vh] p-3 gap-2 overflow-y-auto ">
+				{/* {!!!transactions.length && <CardLiveTransactionFallback />} */}
+				{transactions.map((item) => (
+					<CardLiveTransactionItem
+						key={item.hash}
+						item={item}
+						isLatest={true}
+					/>
+				))}
 			</div>
 		</CardBase>
 	);

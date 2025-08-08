@@ -27,7 +27,6 @@ const CardTotalVolume = () => {
 						{satoshiToBTC(totalBTCTransferred)}
 					</h3>
 				</div>
-
 				<p className="text-sm text-muted-foreground mb-1">
 					Sum of all recieved transactions
 				</p>

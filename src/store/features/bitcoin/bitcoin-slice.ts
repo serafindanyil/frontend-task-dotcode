@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 export interface BitcoinTransaction {
 	timestamp: number;
+	hash: string;
 	sender: string;
 	receiver: string;
 	valueSatoshis: number;

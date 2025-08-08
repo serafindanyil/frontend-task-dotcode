@@ -27,6 +27,7 @@ export const connectBitcoinStream = () => (dispatch: AppDispatch) => {
 		dispatch(
 			addTransaction({
 				timestamp: tx.time,
+				hash: tx.hash,
 				sender,
 				receiver,
 				valueSatoshis,
@@ -47,7 +48,7 @@ export const disconnectBitcoinStream = () => (dispatch: AppDispatch) => {
 		socket.close();
 		socket = null;
 		dispatch(stopListening());
-		// діспатч якщо що прибрати 
+		// діспатч якщо що прибрати
 	}
 };
 
