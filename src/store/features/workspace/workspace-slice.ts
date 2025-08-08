@@ -11,7 +11,7 @@ const initialBlocks: TWorkspaceBlock[] = Array.from(
 	{ length: BLOCK_COUNT },
 	(_, i) => ({
 		id: i + 1,
-		x: i * BLOCK_X_OFFSET,
+		x: 50,
 		y: i * BLOCK_Y_OFFSET,
 		width: BLOCK_WIDTH,
 		height: BLOCK_HEIGHT,
